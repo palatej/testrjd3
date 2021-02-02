@@ -1,5 +1,5 @@
 library(RJDemetra)
-library(RJDemetra3)
+suppressPackageStartupMessages(library(RJDemetra3))
 
 load("./Data/retail.rda")
 
