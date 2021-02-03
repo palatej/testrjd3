@@ -3,7 +3,7 @@ suppressPackageStartupMessages(library(RJDemetra3))
 
 load("./Data/retail.rda")
 
-spec<-"RSA4"
+spec<-"RSA5"
 
 t0<-Sys.time()
 x13_all<-lapply(retail, function(z){RJDemetra::x13(z,spec)})
@@ -11,11 +11,12 @@ t1<-Sys.time()
 cat("\nRJD:\n")
 cat(t1-t0)
 
-#s3<-RJDemetra3::spec_tramoseats_default(spec)
-#s3$tramo$estimate$tol<-1e-7
+s3<-RJDemetra3::spec_x13_default(spec)
+s3$tramo$estimate$tol<-1e-9
 
 t0<-Sys.time()
 x133_all<-lapply(retail, function(z){RJDemetra3::x13(z,spec)})
+#x133_all<-lapply(retail, function(z){RJDemetra3::x13(z,s3)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0)
