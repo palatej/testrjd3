@@ -1,22 +1,22 @@
-suppressWarnings(library(RJDemetra))
-suppressWarnings(library(RJDemetra3))
+library(RJDemetra)
+suppressPackageStartupMessages(library(RJDemetra3))
 
-load("./Data/retail.rda")
-
+DATA<-retail
 spec<-"RSAfull"
 
+dspec<-tramoseats_spec(spec, estimate.tol = 1e-9)
 t0<-Sys.time()
-ts_all<-lapply(retail, function(z){RJDemetra::tramoseats(z,spec)})
+ts_all<-lapply(DATA, function(z){RJDemetra::tramoseats(z,dspec)})
 t1<-Sys.time()
 cat("\nRJD:\n")
 cat(t1-t0)
 
 s3<-RJDemetra3::spec_tramoseats_default(spec)
-s3$tramo$estimate$tol<-1e-7
+s3$tramo$estimate$tol<-1e-9
 
 t0<-Sys.time()
-ts3_all<-lapply(retail, function(z){RJDemetra3::tramoseats(z,spec)})
-#ts3_all<-lapply(retail, function(z){RJDemetra3::tramoseats(z,s3)})
+#ts3_all<-lapply(DATA, function(z){RJDemetra3::fast.tramoseats(z,spec)})
+ts3_all<-lapply(DATA, function(z){RJDemetra3::fast.tramoseats(z,s3)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0)
