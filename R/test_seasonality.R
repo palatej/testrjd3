@@ -1,4 +1,5 @@
-suppressPackageStartupMessages(library(RJDemetra3))
+suppressPackageStartupMessages(library(rjd3modelling))
+suppressPackageStartupMessages(library(rjd3sa))
 
 s<-Imports$Latvia
 
@@ -21,7 +22,7 @@ lapply(Exports, function(z){st<-do.stationary(log(z), 12); return (seasonality.c
 
 
 z<-tramoseats(log(s))
-cs<-seasonality.combined(z$result$decomposition$stochastics$s$data+z$result$decomposition$stochastics$i$data, period=12, mul = F)
+cs<-seasonality.combined(z$result$decomposition$stochastics$i$data, period=12, mul = F)
 
 print(cs)
 

@@ -1,5 +1,5 @@
 library(RJDemetra)
-suppressPackageStartupMessages(library(RJDemetra3))
+suppressPackageStartupMessages(library(rjd3x13))
 
 spec<-"RSA5"
 
