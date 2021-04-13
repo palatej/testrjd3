@@ -1,5 +1,5 @@
 suppressPackageStartupMessages(library(rjd3modelling))
-suppressPackageStartupMessages(library(rjd3sa))
+suppressPackageStartupMessages(library(RJDemetra3))
 
 s<-Imports$Latvia
 
@@ -18,8 +18,10 @@ print(kw)
 fr<-seasonality.friedman(st$ddata, 12)
 print(fr)
 
-lapply(Exports, function(z){st<-do.stationary(log(z), 12); return (seasonality.combined(st$ddata, 12, 1+st$differences[2,1], mul = F)$seasonality)})
 
+w<-lapply(Imports, function(z){st<-do.stationary(z, 12); 
+return (seasonality.kruskalwallis(st$ddata, period=12)$pvalue)})
+print(w[w>0.05])
 
 z<-tramoseats(log(s))
 cs<-seasonality.combined(z$result$decomposition$stochastics$i$data, period=12, mul = F)
