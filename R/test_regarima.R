@@ -2,7 +2,7 @@ library(RJDemetra)
 suppressPackageStartupMessages(library(RJDemetra3))
 
 
-spec<-"RG5"
+spec<-"RG3"
 
 t0<-Sys.time()
 rg<-lapply(retail, function(z){RJDemetra::regarima_x13(z,spec)})

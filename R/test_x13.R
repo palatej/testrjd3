@@ -1,7 +1,7 @@
 library(RJDemetra)
 suppressPackageStartupMessages(library(RJDemetra3))
 
-spec<-"RSA4"
+spec<-"RSA5"
 
 dspec<-x13_spec(spec, estimate.tol = 1e-9)
 t0<-Sys.time()
