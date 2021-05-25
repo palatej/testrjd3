@@ -23,7 +23,7 @@ w<-lapply(Imports, function(z){st<-do.stationary(z, 12);
 return (seasonality.kruskalwallis(st$ddata, period=12)$pvalue)})
 print(w[w>0.05])
 
-z<-tramoseats(log(s))
+z<-rjd3tramoseats::tramoseats(log(s))
 cs<-seasonality.combined(z$result$decomposition$stochastics$i$data, period=12, mul = F)
 
 print(cs)
