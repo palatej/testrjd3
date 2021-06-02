@@ -2,12 +2,12 @@ suppressPackageStartupMessages(library(RJDemetra3))
 
 load("./Data/spain.rda")
 
-s<-spain$IPI_ALIM
+s<-spain$IPI_GEN
 
 dspec<-rjd3tramoseats::spec_tramoseats_default("rsa0")
 dspec$tramo$regression$mean<-NULL
 
-#dspec<-rjd3tramoseats::spec_tramoseats_default("rsafull")
+dspec<-rjd3tramoseats::spec_tramoseats_default("rsafull")
 
 q<-rjd3tramoseats::tramoseats(s, dspec)
 spec<-q$result_spec

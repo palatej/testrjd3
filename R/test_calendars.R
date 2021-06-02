@@ -1,16 +1,16 @@
 suppressPackageStartupMessages(library(rjd3modelling))
 
 
-belgiumCalendar<-newCalendar()
-addFixedDayToCalendar(belgiumCalendar, 7, 21)
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "NEWYEAR")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "CHRISTMAS")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "MAYDAY")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "EASTERMONDAY")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "WHITMONDAY")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "ASSUMPTION")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "ALLSAINTDAY")
-addPrespecifiedHolidayToCalendar(belgiumCalendar, "ARMISTICE")
+belgiumCalendar<-calendar.new()
+calendar.fixedday(belgiumCalendar, 7, 21)
+calendar.holiday(belgiumCalendar, "NEWYEAR")
+calendar.holiday(belgiumCalendar, "CHRISTMAS")
+calendar.holiday(belgiumCalendar, "MAYDAY")
+calendar.holiday(belgiumCalendar, "EASTERMONDAY")
+calendar.holiday(belgiumCalendar, "WHITMONDAY")
+calendar.holiday(belgiumCalendar, "ASSUMPTION")
+calendar.holiday(belgiumCalendar, "ALLSAINTDAY")
+calendar.holiday(belgiumCalendar, "ARMISTICE")
 
 M<-td(12, c(1980,1), 120, c(1,1,1,1,2,3,0), contrasts = F)
 

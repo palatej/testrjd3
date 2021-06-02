@@ -1,6 +1,9 @@
 suppressPackageStartupMessages(library(rjd3tramoseats))
 suppressPackageStartupMessages(library(rjd3sts))
 
+load("./Data/spain.rda")
+
+
 sf<-sts.forecast(spain$IPI_GEN, model="none", nf=12)
 tf<-tramo.forecast(spain$IPI_GEN, spec="tr0", nf=12)
 
