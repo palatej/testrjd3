@@ -12,11 +12,11 @@ calendar.holiday(belgiumCalendar, "ASSUMPTION")
 calendar.holiday(belgiumCalendar, "ALLSAINTDAY")
 calendar.holiday(belgiumCalendar, "ARMISTICE")
 
-M<-td(12, c(1980,1), 120, c(1,1,1,1,2,3,0), contrasts = F)
+M<-rjd3modelling::td(12, c(1980,1), 120, c(1,1,1,1,2,3,0), contrasts = F)
 
 H<-htd(belgiumCalendar, 12, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts =F)
 
-MC<-td(4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
+MC<-rjd3modelling::td(4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
 HC<-htd(belgiumCalendar, 4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
 
 C12<-longTermMean(belgiumCalendar, 12)
