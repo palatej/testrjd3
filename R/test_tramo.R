@@ -1,5 +1,4 @@
 library(RJDemetra)
-suppressPackageStartupMessages(library(RJDemetra3))
 
 DATA<-retail
 
@@ -11,10 +10,10 @@ t1<-Sys.time()
 cat("\nRJD:\n")
 cat(t1-t0)
 
-s3<-spec_tramo_default(spec)
+s3<-rjd3tramoseats::spec_tramo_default(spec)
 s3$estimate$tol<-1e-9
 t0<-Sys.time()
-tramo3<-lapply(DATA, function(z){fast.tramo(z, spec)})
+tramo3<-lapply(DATA, function(z){rjd3tramoseats::fast.tramo(z, spec)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0)

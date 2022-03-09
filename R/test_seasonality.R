@@ -1,10 +1,10 @@
-suppressPackageStartupMessages(library(rjd3modelling))
-suppressPackageStartupMessages(library(RJDemetra3))
+library(rjd3sa)
 
+Imports<-rjd3toolkit::Imports
 s<-Imports$Latvia
 
 plot(s)
-st<-do.stationary(log(s), 12)
+st<-rjd3modelling::do.stationary(log(s), 12)
 
 qs<-seasonality.qs(st$ddata, 12)
 print(qs)
@@ -19,7 +19,7 @@ fr<-seasonality.friedman(st$ddata, 12)
 print(fr)
 
 
-w<-lapply(Imports, function(z){st<-do.stationary(z, 12); 
+w<-lapply(Imports, function(z){st<-rjd3modelling::do.stationary(z, 12); 
 return (seasonality.kruskalwallis(st$ddata, period=12)$pvalue)})
 print(w[w>0.05])
 

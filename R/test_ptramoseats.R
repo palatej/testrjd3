@@ -1,4 +1,3 @@
-suppressPackageStartupMessages(library(RJDemetra3))
 
 load("./Data/spain.rda")
 
@@ -18,11 +17,11 @@ plot(as.numeric(q$result$final$t$data), type='l')
 for (i in 1:10){
   nspec<-fspec
   nspec$tramo$arima$theta[1,1]$value<-nspec$tramo$arima$theta[1,1]$value+i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$t$data), col="gray")
   nspec<-fspec
   nspec$tramo$arima$theta[1,1]$value<-nspec$tramo$arima$theta[1,1]$value-i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$t$data), col="gray")
 }
 
@@ -33,11 +32,11 @@ plot(as.numeric(q$result$final$sa$data), type='l')
 for (i in 1:10){
   nspec<-fspec
   nspec$tramo$arima$theta[1,1]$value<-nspec$tramo$arima$theta[1,1]$value+i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$sa$data), col="gray")
   nspec<-fspec
   nspec$tramo$arima$theta[1,1]$value<-nspec$tramo$arima$theta[1,1]$value-i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$sa$data), col="gray")
 }
 
@@ -48,11 +47,11 @@ plot(as.numeric(q$result$final$t$data), type='l')
 for (i in 1:10){
   nspec<-fspec
   nspec$tramo$arima$btheta[1,1]$value<-nspec$tramo$arima$btheta[1,1]$value+i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$t$data), col="gray")
   nspec<-fspec
   nspec$tramo$arima$btheta[1,1]$value<-nspec$tramo$arima$btheta[1,1]$value-i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$t$data), col="gray")
 }
 
@@ -63,11 +62,11 @@ plot(as.numeric(q$result$final$sa$data), type='l')
 for (i in 1:10){
   nspec<-fspec
   nspec$tramo$arima$btheta[1,1]$value<-nspec$tramo$arima$btheta[1,1]$value+i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$sa$data), col="gray")
   nspec<-fspec
   nspec$tramo$arima$btheta[1,1]$value<-nspec$tramo$arima$btheta[1,1]$value-i*.03
-  p<-fast.tramoseats(s,spec= nspec)
+  p<-rjd3tramoseats::fast.tramoseats(s,spec= nspec)
   lines(as.numeric(p$final$sa$data), col="gray")
 }
 
