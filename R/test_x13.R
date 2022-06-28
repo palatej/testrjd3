@@ -4,7 +4,7 @@ spec<-"RSA5"
 
 dspec<-x13_spec(spec, estimate.tol = 1e-9)
 t0<-Sys.time()
-x13_all<-lapply(retail, function(z){RJDemetra::x13(z,dspec)})
+x13_all<-lapply(rjd3toolkit::retail, function(z){RJDemetra::x13(z,dspec)})
 t1<-Sys.time()
 cat("\nRJD:\n")
 cat(t1-t0)
@@ -14,14 +14,14 @@ s3$regarima$estimate$tol<-1e-9
 
 t0<-Sys.time()
 #x133_all<-lapply(retail, function(z){RJDemetra3::x13(z,spec)})
-x133_all<-lapply(retail, function(z){rjd3x13::fast.x13(z,s3)})
+x133_all<-lapply(rjd3toolkit::retail, function(z){rjd3x13::fast.x13(z,s3)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0)
 
 t0<-Sys.time()
-x11_all<-lapply(retail, function(z){rjd3x13::x11(z, rjd3x13::spec_x11_default())})
-#ts3_all<-lapply(retail, function(z){RJDemetra3::tramoseats(z,s3)})
+x11_all<-lapply(rjd3toolkit::retail, function(z){rjd3x13::x11(z, rjd3x13::spec_x11_default())})
+#ts3_all<-lapply(rjd3toolkit::retail, function(z){RJDemetra3::tramoseats(z,s3)})
 t1<-Sys.time()
 cat("\nX11:\n")
 cat(t1-t0)

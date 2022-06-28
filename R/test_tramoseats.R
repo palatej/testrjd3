@@ -1,6 +1,6 @@
 library(RJDemetra)
 
-DATA<-retail
+DATA<-rjd3toolkit::retail
 spec<-"RSAfull"
 
 dspec<-tramoseats_spec(spec, estimate.tol = 1e-9)

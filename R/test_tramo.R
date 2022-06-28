@@ -1,6 +1,6 @@
 library(RJDemetra)
 
-DATA<-retail
+DATA<-rjd3toolkit::retail
 
 spec<-"TRfull"
 dspec<-regarima_spec_tramoseats(spec)
