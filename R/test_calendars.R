@@ -13,12 +13,12 @@ calendar.holiday(belgiumCalendar, "ALLSAINTSDAY")
 calendar.holiday(belgiumCalendar, "ARMISTICE")
 calendar.singledate(belgiumCalendar, "1980-05-08")
 
-M<-rjd3modelling::td(12, c(1980,1), 120, c(1,1,1,1,2,3,0), contrasts = F)
+M<-rjd3modelling::td(12, c(1980,1), 120, groups = c(1,1,1,1,2,3,0), contrasts = F)
 
-H<-htd(belgiumCalendar, 12, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts =F)
+H<-htd(belgiumCalendar, 12, c(1980,1), 120,  groups = c(1,1,1,1,1,2,0), contrasts =F)
 
-MC<-rjd3modelling::td(4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
-HC<-htd(belgiumCalendar, 4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
+MC<-rjd3modelling::td(4, c(1980,1), 120,  groups = c(1,1,1,1,1,2,0), contrasts = T)
+HC<-htd(belgiumCalendar, 4, c(1980,1), 120,  groups = c(1,1,1,1,1,2,0), contrasts = T)
 
 C12<-longTermMean(belgiumCalendar, 12)
 C4<-longTermMean(belgiumCalendar, 4)
@@ -27,4 +27,4 @@ C12bis<-longTermMean(belgiumCalendar, 12, c(1,1,1,1,1,2,0))
 C4bis<-longTermMean(belgiumCalendar, 4, c(1,1,1,1,1,2,0))
 
 print(C12)
-print( C12bis)
+print(C12bis)
