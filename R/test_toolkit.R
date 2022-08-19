@@ -1,7 +1,7 @@
 suppressPackageStartupMessages(library(RJDemetra3))
 
 
-a<-randomsT(50, 1000)
+a<-rjd3toolkit::randomsT(50, 1000)
 
 print(rjd3toolkit::bowmanshenton(a) )
 print(rjd3toolkit::doornikhansen(a) )
