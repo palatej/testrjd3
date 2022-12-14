@@ -1,4 +1,4 @@
-suppressPackageStartupMessages(library(RJDemetra3))
+suppressPackageStartupMessages(library(rjdemetra3))
 
 
 a<-rjd3toolkit::randomsT(50, 1000)
