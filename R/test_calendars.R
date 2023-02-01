@@ -1,30 +1,30 @@
-suppressPackageStartupMessages(library(rjd3modelling))
 
 
-belgiumCalendar<-calendar.new()
-calendar.fixedday(belgiumCalendar, 7, 21)
-calendar.holiday(belgiumCalendar, "NEWYEAR")
-calendar.holiday(belgiumCalendar, "CHRISTMAS")
-calendar.holiday(belgiumCalendar, "MAYDAY")
-calendar.holiday(belgiumCalendar, "EASTERMONDAY")
-calendar.holiday(belgiumCalendar, "WHITMONDAY")
-calendar.holiday(belgiumCalendar, "ASSUMPTION")
-calendar.holiday(belgiumCalendar, "ALLSAINTSDAY")
-calendar.holiday(belgiumCalendar, "ARMISTICE")
-calendar.singledate(belgiumCalendar, "1980-05-08")
+BE <-  rjd3toolkit::national_calendar(list(
+  rjd3toolkit::fixed_day(7,21),
+  rjd3toolkit::special_day('NEWYEAR'),
+  rjd3toolkit::special_day('CHRISTMAS'),
+  rjd3toolkit::special_day('MAYDAY'),
+  rjd3toolkit::special_day('EASTERMONDAY'),
+  rjd3toolkit::special_day('ASCENSION'),
+  rjd3toolkit::special_day('WHITMONDAY'),
+  rjd3toolkit::special_day('ASSUMPTION'),
+  rjd3toolkit::special_day('ALLSAINTSDAY'),
+  rjd3toolkit::special_day('ARMISTICE'),
+  rjd3toolkit::single_day('1980-05-08')))
 
-M<-rjd3modelling::td(12, c(1980,1), 120, c(1,1,1,1,2,3,0), contrasts = F)
+M<-rjd3toolkit::td(12, c(1980,1), 120, c(1,1,1,1,2,3,0), contrasts = F)
 
-H<-htd(belgiumCalendar, 12, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts =F)
+H<- rjd3toolkit::calendar_td(BE, 12, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts =F)
 
-MC<-rjd3modelling::td(4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
-HC<-htd(belgiumCalendar, 4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
+MC<-rjd3toolkit::td(4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
+HC<- rjd3toolkit::calendar_td(BE, 4, c(1980,1), 120, c(1,1,1,1,1,2,0), contrasts = T)
 
-C12<-longTermMean(belgiumCalendar, 12)
-C4<-longTermMean(belgiumCalendar, 4)
+C12<-rjd3toolkit::long_term_mean(BE, 12)
+C4<- rjd3toolkit::long_term_mean(BE, 4)
 
-C12bis<-longTermMean(belgiumCalendar, 12, c(1,1,1,1,1,2,0))
-C4bis<-longTermMean(belgiumCalendar, 4, c(1,1,1,1,1,2,0))
+C12bis<-rjd3toolkit::long_term_mean(BE, 12, c(1,1,1,1,1,2,0))
+C4bis<-rjd3toolkit::long_term_mean(BE, 4, c(1,1,1,1,1,2,0))
 
 print(C12)
 print( C12bis)

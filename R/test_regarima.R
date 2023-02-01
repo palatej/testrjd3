@@ -11,7 +11,7 @@ cat("\nRJD:\n")
 cat(t1-t0, "\n")
 
 t0<-Sys.time()
-rg3<-lapply(rjd3toolkit::retail, function(z){rjd3x13::fast.regarima(z,spec)})
+rg3<-lapply(rjd3toolkit::retail, function(z){rjd3x13::fast_regarima(z,spec)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0,"\n")

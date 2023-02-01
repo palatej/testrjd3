@@ -5,17 +5,17 @@ spec<-"RSAfull"
 
 dspec<-tramoseats_spec(spec, estimate.tol = 1e-9)
 t0<-Sys.time()
-ts_all<-lapply(DATA, function(z){RJDemetra::tramoseats(z,dspec)})
+ts_all<-lapply(DATA, function(z){tramoseats(z,dspec)})
 t1<-Sys.time()
 cat("\nRJD:\n")
 cat(t1-t0)
 
-s3<-rjd3tramoseats::spec_tramoseats_default(spec)
+s3<-rjd3tramoseats::spec_tramoseats(spec)
 s3$tramo$estimate$tol<-1e-9
 
 t0<-Sys.time()
 #ts3_all<-lapply(DATA, function(z){RJDemetra3::fast.tramoseats(z,spec)})
-ts3_all<-lapply(DATA, function(z){rjd3tramoseats::fast.tramoseats(z,s3)})
+ts3_all<-lapply(DATA, function(z){rjd3tramoseats::fast_tramoseats(z,s3)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0)
