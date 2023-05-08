@@ -1,6 +1,6 @@
 rjd3toolkit::aggregate(rjd3toolkit::ABS$X0.2.09.10.M)
 
-x<-rjd3toolkit::randoms_t(12, 100)
+x<-rjd3toolkit::random_t(12, 100)
 
 print(rjd3toolkit::autocorrelations(x))
 print(rjd3toolkit::autocorrelations_inverse(x))
