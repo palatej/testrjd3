@@ -24,5 +24,5 @@ plot(twk1$gain2, type='l')
 
 ucm2<-airline_decomposition(23,.2,-.7)
 
-twk2<-rjd3toolkit::ucarima_wk(ucm2, 1)
+twk2<-rjd3toolkit::ucarima_wk(ucm2, 1, T, 1200)
 lines(twk2$gain2, col="blue")
