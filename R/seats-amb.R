@@ -4,7 +4,7 @@ airline_decomposition<-function(period, th, bth){
   return (rjd3tramoseats::seats_decompose(sarima))
 }
 
-airline.variances<-function(period, th, bth){
+airline_variances<-function(period, th, bth){
   ucm<-airline_decomposition(period, th, bth)
   if (is.null(ucm)) return (c(NA, NA, NA)) else return (c(ucm$components[[1]]$var, 
                                                           ucm$components[[2]]$var, 
@@ -12,7 +12,7 @@ airline.variances<-function(period, th, bth){
 }
 
 # Gets the variances of the canonical decomposition for airline models with different parameters
-vars<-sapply(seq(.3, -.99, -.01), function(bth){return (airline.variances(12,-.5, bth))})
+vars<-sapply(seq(.3, -.99, -.01), function(bth){return (airline_variances(12,-.5, bth))})
 
 # trend
 matplot(t(vars), type = 'b', pch=18)

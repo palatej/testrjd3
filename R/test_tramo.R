@@ -10,10 +10,10 @@ t1<-Sys.time()
 cat("\nRJD:\n")
 cat(t1-t0)
 
-s3<-rjd3tramoseats::spec_tramo(spec)
+s3<-rjd3tramoseats::tramo_spec(spec)
 s3$estimate$tol<-1e-9
 t0<-Sys.time()
-tramo3<-lapply(DATA, function(z){rjd3tramoseats::fast_tramo(z, spec)})
+tramo3<-lapply(DATA, function(z){rjd3tramoseats::tramo_fast(z, spec)})
 t1<-Sys.time()
 cat("\nRJD3:\n")
 cat(t1-t0)

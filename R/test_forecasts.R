@@ -9,3 +9,5 @@ lines(as.numeric(tf[,1]), col="red")
 
 plot(sf[,2], type="l")
 lines(as.numeric(tf[,2]), col="red")
+
+# ARIMA forecasts
