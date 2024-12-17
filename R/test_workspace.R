@@ -11,7 +11,7 @@ RJDemetra::new_multiprocessing(wk, "sa1")
 RJDemetra::add_sa_item(wk, "sa1", myreg1, "ts")
 RJDemetra::save_workspace(wk, file.path(dir, "workspace.xml"))
 
-ws3 <- rjdemetra3::read_workspace(rjdemetra3::.jws_load(file.path(dir, "workspace.xml")))
+ws3 <- rjd3workspace::read_workspace(rjd3workspace::.jws_load(file.path(dir, "workspace.xml")))
 
 #for (v in ws3$context$variables$r){print(v); cat("\n")}
 

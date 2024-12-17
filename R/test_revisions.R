@@ -1,5 +1,5 @@
-jws<-rjdemetra3::.jws_load("C:/Cruncher/workspaces/v3.0.0/ref/test1.xml")
-ws<-rjdemetra3::read_workspace(jws)
+jws<-rjd3workspace::.jws_load("C:/jdemetra/workspaces/test1.xml")
+ws<-rjd3workspace::read_workspace(jws)
 sap<-ws$processing$`SAProcessing-1`
 sa<-sap$`Exports
 France`

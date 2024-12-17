@@ -14,7 +14,6 @@ s3<-rjd3tramoseats::tramoseats_spec(spec)
 s3$tramo$estimate$tol<-1e-9
 
 t0<-Sys.time()
-#ts3_all<-lapply(DATA, function(z){RJDemetra3::fast.tramoseats(z,spec)})
 ts3_all<-lapply(DATA, function(z){rjd3tramoseats::tramoseats_fast(z,s3)})
 t1<-Sys.time()
 cat("\nRJD3:\n")

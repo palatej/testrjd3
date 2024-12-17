@@ -1,6 +1,3 @@
-library(RJDemetra)
-#suppressPackageStartupMessages(library(RJDemetra3))
-
 
 spec<-"RG5"
 

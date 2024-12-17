@@ -1,5 +1,3 @@
-suppressPackageStartupMessages(library(rjdemetra3))
-
 
 a<-rjd3toolkit::random_t (50, 1000)
 

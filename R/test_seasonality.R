@@ -27,5 +27,16 @@ cs<-rjd3toolkit::seasonality_combined(z$result$decomposition$stochastics$i$data,
 
 print(cs)
 
+test_ch<-function(n=100, freq=12, type="Trigonometric"){
+  x<-rnorm(n)
+  q<-rjd3toolkit::seasonality_canovahansen(x, freq, lag1=FALSE, type=type)
+  return(q$details)
+}
 
+mc_ch<-function(n=100, freq=12, type="Trigonometric", rep=100000){
+  w<-sapply(rep(n, rep), function(z)test_ch(z, freq, type))
+  return(w)
+}
 
+w12<-mc_ch(n=80, freq=12, type="Trigonometric", rep=100000)
+hist(w12, n=100)

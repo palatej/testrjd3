@@ -12,17 +12,17 @@ airline_variances<-function(period, th, bth){
 }
 
 # Gets the variances of the canonical decomposition for airline models with different parameters
-vars<-sapply(seq(.3, -.99, -.01), function(bth){return (airline_variances(12,-.5, bth))})
+vars<-sapply(seq(.3, -.99, -.005), function(bth){return (airline_variances(12,-.5, bth))})
 
 # trend
 matplot(t(vars), type = 'b', pch=18)
 
-ucm1<-airline_decomposition(23,-.8,-.7)
+ucm1<-airline_decomposition(33,-.8,-.7)
 
 twk1<-rjd3toolkit::ucarima_wk(ucm1, 1)
 plot(twk1$gain2, type='l')
 
-ucm2<-airline_decomposition(23,.2,-.7)
+ucm2<-airline_decomposition(33,.2,-.7)
 
 twk2<-rjd3toolkit::ucarima_wk(ucm2, 1, T, 1200)
 lines(twk2$gain2, col="blue")
